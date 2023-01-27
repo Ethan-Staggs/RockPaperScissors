@@ -1,88 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-
-    <script>
-        function getComputerChoice() {
-            let result = Math.floor(Math.random() * 3);
-            if(result == 0) {
-                return "Rock"
-            } else if(result == 1) {
-                return "Paper";
-            } else if(result == 2) {
-                return "Scissors";
-            }
-        }
-
-        function playRound(playerSelection, computerChoice) {
-
-            let playerScore = 0;
-            let computerScore = 0;
-
-            if(playerSelection == computerChoice) {
-                return "Tie!"
-            } else if(playerSelection == "Rock" && computerChoice == "Scissors") {
-                playerScore = playerScore + 1;
-                return "Rock beats Scissors. Player wins!"
-            } else if(playerSelection == "Paper" && computerChoice == "Rock") {
-                playerScore = playerScore + 1;
-                return "Paper beats Rock. Player wins!"
-            } else if(playerSelection == "Scissors" && computerChoice == "Paper") {
-                playerScore = playerScore + 1;
-                return "Scissors beat Paper. Player wins!"
-            } else if(computerChoice == "Rock" && playerSelection == "Scissors") {
-                computerScore = computerScore + 1;
-                return "Rock beats Scissors. Computer wins!"
-            } else if(computerChoice == "Paper" && playerSelection == "Rock") {
-                computerScore = computerScore + 1;
-                return "Paper beats Rock. Computer wins!"
-            } else if(computerChoice == "Scissors" && playerSelection == "Paper") {
-                computerScore = computerScore + 1;
-                return "Scissors beat Rock. Computer wins!"
-            } 
-
-        }
-
-        function game() {
-
-            let playerScore = 0;
-            let computerScore = 0;
-
-            for(let i = 1; i <= 5; i++) {
-            const computerChoice = getComputerChoice();
-            const playerSelection = prompt("Pick Rock, Paper, or Scissors");
-            playRound(playerSelection, computerChoice);
-            console.log(playRound(playerSelection, computerChoice));
-
-            if(playRound(playerSelection, computerChoice).includes("Player wins!")) {
-                playerScore++;
-            } else if(playRound(playerSelection, computerChoice).includes("Computer wins!")) {
-                computerScore++;
-            }
     
-            }
-            console.log("Player Score: " + playerScore);
-            console.log("Computer Score: " + computerScore);
+<div class="gameBoard">
+    <div class="buttons"> 
+        <button id="Rock" class="buttons"><img src="rock.png"></button>
+        <br>
+        <button id="Paper" class="buttons"><img src="paper.png"></button>
+        <br>
+        <button id="Scissors" class="buttons"><img src="scissors.png"></button>
+    </div>
+</div>
 
-            if(playerScore > computerScore) {
-                console.log("Player wins!")
-            } else if(playerScore < computerScore) {
-                console.log("Computer wins!");
-            } else{
-                console.log("Tie game!");
-            }
-            
-        }
+<div class="scores">
+    <div class="card" id="opponent">
+        <h1>Computer</h1>
+        <h3 id="oppResult"></h3>
+        <h3>Score: </h3><h3 id="oppScore">0</h3>
+        <h3 id="oppAnnoncement"></h3>
+        <h3 id="plaAnnoncement"></h3>
+    </div>
+    <div class="card" id="player">
+        <h1>Player </h1>
+        <h3 id="plaResult"></h3>
+        <h3>Score: </h3><h3 id="plaScore">0</h3>
+    </div>
+</div>
 
-        game();
+<div class="reset">
+    <button class="resetBtn"><h2>Reset</h2></button>
+</div>
 
-    </script>
+
     
+    <script src="script.js"></script>
 </body>
 </html>

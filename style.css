@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f7e300;
+}
+
+.gameBoard {
+    margin-top: 32px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color:#f7e300
+}
+
+.results {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.scores{
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #eee;
+    box-shadow: 2px 4px 16px rgb(0 0 0 / 6%);
+    border-radius: 4px;
+    padding: 16px;
+    margin: 16px;
+    width: 300px;
+}
+
+.resetBtn, .reset {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border: 1px solid #eee;
+    box-shadow: 2px 4px 16px rgb(0 0 0 / 6%);
+    border-radius: 4px;
+    width: 300px;
+    background-color: #f7e300;
+    text-decoration: none;
+}
+
+
+
